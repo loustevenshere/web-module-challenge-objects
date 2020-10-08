@@ -82,7 +82,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console
 */
 
-
+console.log(reviews[5].feedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -90,7 +90,13 @@ Using the reviews array above do the following:
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
+function addReview(arr, name, rating, feedback) {
+  arr.push({name,rating,feedback});
+  return arr;
+}
 
+addReview(reviews, 'Lou', 4, "Eh");
+console.log(reviews) 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -98,9 +104,12 @@ Reyna's feedback is missing! Use what you know to do the following:
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
-
-
+function changeFeedback(arr, index, feedback) {
+  arr[index].feedback = feedback;
+  return arr;
+}
+changeFeedback(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays")
+console.log(reviews)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -113,10 +122,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(arr, index) {
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was ${arr[index].feedback}`
 }
-
+console.log(getReviewByIndex(reviews, 0))
 
   
 
@@ -131,8 +140,9 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  let last = -1
+  return `${arr[last].name} gave the restaurant a ${arr[last].rating} star review, and their feedback was ${arr[last].feedback}`
 } 
 
 
