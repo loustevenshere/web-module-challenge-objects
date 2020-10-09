@@ -166,13 +166,13 @@ Use the getReviewsByRating function below to do the following:
  function getReviewByRating(arr, rating) {
     const arrRating = []
     for (let i = 0; i <arr.length; i++) {
-      if (arr.includes(rating).rating) {
-        arrRating.push(arr.rating[rating]);
+      if (arr[i].rating === rating) {
+        arrRating.push(arr[i]);
       }
     }
     return arrRating;
   }
-  console.log(getReviewByRating(reviews, 3))
+  // console.log(getReviewByRating(reviews, 4))
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -188,9 +188,16 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(arr) {
+  const longReviews = []
+  for (let i = 0; i <arr.length; i++) {
+    if (arr[i].feedback.split(" ").length > 15) {
+      longReviews.push(arr[i]);
+    }
   }
+  return longReviews;
+  }
+  console.log(getLongReviews(reviews))
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -211,10 +218,18 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(odometer) {
+    // let car1 = {
+      // odometer: "",
+      // distance: "", }
+      drive : function (distance) {
+        odometer + distance = odometer;
+        return odometer;
+      }
+    }
     
-}
+
+
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
