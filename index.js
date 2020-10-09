@@ -17,7 +17,7 @@ function createMenuItem(name, price, category) {
     return {name, price, category}
 }
 
-console.log(createMenuItem("Turkey Hoagie", 5, "Lunch"))
+// console.log(createMenuItem("Turkey Hoagie", 5, "Lunch"))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -62,7 +62,7 @@ export const burger = {
     }
   }
 }
-console.log(burger.discount("teacher"));
+// console.log(burger.discount("teacher"));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -82,7 +82,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console
 */
 
-console.log(reviews[5].feedback);
+// console.log(reviews[5].feedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -96,7 +96,7 @@ function addReview(arr, name, rating, feedback) {
 }
 
 addReview(reviews, 'Lou', 4, "Eh");
-console.log(reviews) 
+// console.log(reviews) 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -109,7 +109,7 @@ function changeFeedback(arr, index, feedback) {
   return arr;
 }
 changeFeedback(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays")
-console.log(reviews)
+// console.log(reviews)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -123,9 +123,9 @@ Use the getReviewByIndex function below to do the following:
 
 
 function getReviewByIndex(arr, index) {
-  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was ${arr[index].feedback}`
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`;
 }
-console.log(getReviewByIndex(reviews, 0))
+// console.log(getReviewByIndex(reviews, 0))
 
   
 
@@ -141,8 +141,8 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(arr) {
-  let last = -1
-  return `${arr[last].name} gave the restaurant a ${arr[last].rating} star review, and their feedback was ${arr[last].feedback}`
+  const index = arr.length - 1;
+  return getReviewByIndex(arr,index)
 } 
 
 
@@ -163,9 +163,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(arr, rating) {
+    const arrRating = []
+    for (let i = 0; i <arr.length; i++) {
+      if (arr.includes(rating).rating) {
+        arrRating.push(arr.rating[rating]);
+      }
+    }
+    return arrRating;
   }
+  console.log(getReviewByRating(reviews, 3))
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
